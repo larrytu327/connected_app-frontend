@@ -4,17 +4,22 @@
 
 .nav{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 8px 20px;
+}
+
+.nav-end {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav div {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
-.nav img {width: 45px; height: auto;}
+.nav img {width: 60px; height: auto;}
 
 
 .users-list{
@@ -35,4 +40,44 @@ from{
 to{
   transform: rotateZ(360deg);
 }
+}
+
+.navbar-brand-logo {
+  height: 30px;
+  width: 30px;
+}
+
+.logo {
+  border-style:solid;
+  border-color: green;
+  background: rgb(16, 84, 16);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  font-size:120%;
+  color: rgb(16, 84, 16);
+}
+
+.centered-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.centered-text {
+  margin-top: 0px;
+}
+
+.footer {
+  background-color: rgb(5, 62, 21);
+  color: white;
+  display: flex;
+  padding: 15px;
 }

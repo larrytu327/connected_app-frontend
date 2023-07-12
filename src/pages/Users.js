@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 function Users(props) {
 
@@ -24,8 +25,10 @@ function Users(props) {
             return users?.map((user) => {
               return (
                 <div key={user.id}>
-                  <h1>{user.first_name} {user.last_name}</h1>
-                  <h3>{user.type}</h3>
+                    <Link to={`/users/${user.id}`}>
+                        <div>{user.first_name} {user.last_name}</div>
+                    </Link>
+                  <div>{user.type}</div>
                 </div>
               );
             });
