@@ -81,3 +81,45 @@ a:hover {
   display: flex;
   padding: 15px;
 }
+
+.user {
+  display: grid;
+  grid-template-areas:
+      "title"
+      "title"
+      "name"
+      "image"
+      "label"
+}
+
+.user>h1 {
+  grid-area: title;
+}
+
+.user>img {
+  grid-area: image;
+  width: auto;
+  height: 50vh;
+}
+
+.user h2:first-of-type {
+  grid-area: name;
+}
+
+.user h2:last-of-type {
+  grid-area: label;
+}
+
+.delete {
+  border: 1px solid #ddd;
+  background-color: transparent;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: transform .5s ease-in-out;
+}
+.delete:hover {
+  border: 1px solid #ddd;
+  background-color: black;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
