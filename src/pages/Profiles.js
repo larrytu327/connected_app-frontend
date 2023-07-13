@@ -1,34 +1,34 @@
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 
-function Users(props) {
+function Profiles(props) {
 
-		const [ users, setUsers ] = useState([]);
+		const [ profiles, setProfiles ] = useState([]);
 
-        const BASE_URL = "http://localhost:8000/api/users/"
+        const BASE_URL = "http://localhost:8000/api/profiles/"
 
-        const getUsers = async () => {
+        const getProfiles = async () => {
             try {
                 const response = await fetch(BASE_URL)
-                const allUsers = await response.json()
-                setUsers(allUsers)
+                const allProfiles = await response.json()
+                setProfiles(allProfiles)
             } catch(err) {
                 console.log(err)
             }
         }
 
-        useEffect(() => {getUsers()}, [])
+        useEffect(() => {getProfiles()}, [])
         
-        console.log(`There are ${users.length} users available to render`)
+        console.log(`There are ${profiles.length} profiles available to render`)
 
         const loaded = () => {
-            return users?.map((user) => {
+            return profiles?.map((profile) => {
               return (
-                <div key={user.id}>
-                    <Link to={`/users/${user.id}`}>
-                        <div>{user.first_name} {user.last_name}</div>
+                <div key={profile.id}>
+                    <Link to={`/profiles/${profile.id}`}>
+                        <div>{profile.phone}</div>
                     </Link>
-                  <div>{user.type}</div>
+                  <div>{profile.type}</div>
                 </div>
               );
             });
@@ -49,8 +49,8 @@ function Users(props) {
           );
         
           return (
-            <section className="users-list">{users && users.length ? loaded() : loading()}</section>
+            <section className="users-list">{profiles && profiles.length ? loaded() : loading()}</section>
           );
 }
 
-export default Users
+export default Profiles
