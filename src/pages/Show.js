@@ -18,7 +18,7 @@ function Show(props) {
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(editForm)
             }
-            const response = await fetch(`http://localhost:8000/api/profiles/${id}/`, options)
+            const response = await fetch(`http://localhost:8000/api/users/${id}/`, options)
             const updatedProfile = await response.json()
 
             setProfile(updatedProfile)
@@ -41,7 +41,7 @@ function Show(props) {
     
     async function getProfile() {
         try {
-            let data = await fetch(`http://localhost:8000/api/profiles/${id}/`);
+            let data = await fetch(`http://localhost:8000/api/users/${id}/`);
             data = await data.json();
             setProfile(data);
             setEditForm(data);
@@ -90,7 +90,7 @@ function Show(props) {
               method:"DELETE"
           }
 
-          const response = await fetch(`http://localhost:8000/api/profiles/${id}/`, options)
+          const response = await fetch(`http://localhost:8000/api/users/${id}/`, options)
 
 					// you can inspect the response for debugging or extended 
 					//functionality. 
@@ -106,7 +106,7 @@ function Show(props) {
 
         } catch (err) {
             console.log(err)
-            navigate(`http://localhost:8000/api/profiles/${id}/`)
+            navigate(`http://localhost:8000/api/users/${id}/`)
         }
     }
     

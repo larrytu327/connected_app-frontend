@@ -21,8 +21,8 @@ const Header = (props) => {
         </nav>
         <nav className="nav-end nav-item">
           <nav className="nav-link">
-            <Link to="/signin">
-              <div>Sign In</div>
+            <Link to="/login">
+              <div>Log In</div>
             </Link>
           </nav>
         </nav>

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import Profiles from "../pages/Profiles"
 import Show from "../pages/Show"
-import Signin from "../pages/Signin"
+import Login from "../pages/Login"
 
 const Main = () => {
   return (
@@ -9,7 +9,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Profiles />} />
         <Route path="/profiles/:id" element={<Show />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </main>
   )
